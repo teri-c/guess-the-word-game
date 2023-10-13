@@ -72,6 +72,7 @@ const makeGuess = function (letter) {
         guessedLetters.push(letter);
         console.log(guessedLetters);
         displayGuessedLetters();
+        updateWordInProgress(guessedLetters);
     }
 };
 
@@ -83,4 +84,21 @@ const displayGuessedLetters = function () {
         li.innerText = letter;
         guessedLettersElement.append(li);
     }
+};
+
+// Function to Update word in progress
+const updateWordInProgress = function (guessedLetters) {
+    const wordUpper = word.toUpperCase();
+    const wordArray = wordUpper.split("");
+    //console.log(wordArray);
+    const revealWord = [];
+    for (const letter of wordArray) {
+        if (guessedLetters.includes(letter)) {
+            revealWord.push(letter.toUpperCase());
+        } else {
+            revealWord.push("●");
+        }
+    }
+    //console.log(revealWord);
+    wordInProgress.innerText = revealWord.join("");
 };
