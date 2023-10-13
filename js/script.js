@@ -16,11 +16,27 @@ const message = document.querySelector(".message");
 const playAgainButton = document.querySelector(".play-again");
 
 // Starting word to test game
-const word = "magnolia";
+let word = "magnolia";
 // Empty array to contain the letters the player guesses
 const guessedLetters = [];
 // Number of guesses left
 let remainingGuesses = 8;
+
+// async function 
+
+const getWord = async function () {
+    const response = await fetch("https://gist.githubusercontent.com/skillcrush-curriculum/7061f1d4d3d5bfe47efbfbcfe42bf57e/raw/5ffc447694486e7dea686f34a6c085ae371b43fe/words.txt");
+    const words = await response.text();
+    //console.log(words);
+    const wordArray = words.split("\n");
+    console.log(wordArray);
+
+    const randomIndex = Math.floor(Math.random() * wordArray.length);
+    word = wordArray[randomIndex].trim();
+    placeholder(word);
+};
+
+getWord();
 
 
 // Display symbols as placeholders for the chosen word's letters
@@ -32,8 +48,6 @@ const placeholder = function (word) {
     }
     wordInProgress.innerText = placeholderLetter.join("");
 };
-
-placeholder(word);
 
 button.addEventListener("click", function (e) {
     e.preventDefault();
