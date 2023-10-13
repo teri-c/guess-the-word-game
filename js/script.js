@@ -1,7 +1,7 @@
 // The list where guessed letters will appear
 const guessedLettersElement = document.querySelector(".guessed-letters");
 // Button: Guess
-const button = document.querySelector(".guess");
+const guessButton = document.querySelector(".guess");
 // Text input where the player will guess a letter
 const letterInput = document.querySelector(".letter");
 // Empty paragraph where the word in progress appears
@@ -18,9 +18,9 @@ const playAgainButton = document.querySelector(".play-again");
 // Starting word to test game
 let word = "magnolia";
 // Empty array to contain the letters the player guesses
-const guessedLetters = [];
+let guessedLetters = [];
 // Number of guesses left
-let remainingGuesses = 8;
+let remainingGuesses = 4;
 
 // async function 
 
@@ -49,7 +49,7 @@ const placeholder = function (word) {
     wordInProgress.innerText = placeholderLetter.join("");
 };
 
-button.addEventListener("click", function (e) {
+guessButton.addEventListener("click", function (e) {
     e.preventDefault();
     const guess = letterInput.value;
     //console.log(guess);
@@ -135,10 +135,11 @@ const countRemainingGuesses = function (guess) {
 
     if (remainingGuesses === 0) {
         message.innerHTML = `Game over! The word was <span class="highlight">${word}</span>.`;
+        startOver();
     } else if (remainingGuesses === 1) {
         spanRemaining.innerText = `${remainingGuesses} guess`;
     } else {
-        spanRemaining.innerText = `${remainingGuesses} guess`;
+        spanRemaining.innerText = `${remainingGuesses} guesses`;
     }
 };
 
@@ -147,7 +148,33 @@ const checkIfWon = function () {
     if (word.toUpperCase() === wordInProgress.innerText) {
         message.classList.add("win");
         message.innerHTML = `<p class="highlight">You guessed correct the word! Congrats!</p>`;
+
+        startOver();
     }
 };
 
+// Hide and show elements
+const startOver = function () {
+   guessButton.classList.add("hide");
+   remaining.classList.add("hide");
+   guessedLettersElement.classList.add("hide");
+   playAgainButton.classList.remove("hide");
+};
 
+// Click event for Play again button
+playAgainButton.addEventListener("click", function () {
+    // reset values 
+    message.classList.remove("win");
+    message.innerText = "";
+    guessedLettersElement.innerHTML = "";
+    guessedLetters = [];
+    remainingGuesses = 4;
+    spanRemaining.innerText = `${remainingGuesses} guesses`;
+
+    getWord();
+
+    guessButton.classList.remove("hide");
+    remaining.classList.remove("hide");
+    guessedLettersElement.classList.remove("hide");
+    playAgainButton.classList.add("hide");
+});
