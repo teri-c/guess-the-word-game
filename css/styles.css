@@ -2,6 +2,7 @@
   box-sizing: border-box;
 }
 
+
 body, html {
   height: 100%;
 }
@@ -11,16 +12,16 @@ body {
   align-items: center;
   justify-content: center;
   margin: 0;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-style: normal;
-  font-size: 20px;
+  font-size: 27px;
   line-height: 150%;
-  background-color: #dff6f6;
+  background-color: #fa9bc6;
   background-image: url("../img/pawel-czerwinski-ruJm3dBXCqw-unsplash.jpg");
   background-position: center;
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  color: #305050;
+  color: #0d1b4f;
 }
 
 /*.logo {
@@ -29,15 +30,15 @@ body {
 }*/
 
 h1 {
-  width: 100%;
-  /*padding-top: 1em;*/
+  width: 80%;
+  padding-top: 1em;
   
   margin: 0;
-  font-family: "Pacifico", cursive;
+  font-family: "Cherry Bomb One", "Pacifico", system-ui;
   font-style: normal;
   font-weight: normal;
   color: #ffffff;
-  font-size: 80px;
+  font-size: 90px;
   line-height: 100%;
   text-align: center;
 }
@@ -59,8 +60,13 @@ h1 {
 
 .highlight {
   padding: 0.25em;
-  background: #ffe2d6;
-  font-size: 1em;
+  background: #d1f768;
+  /*font-size: 1.5em;*/
+}
+
+.change-font {
+  font-family: "Kirang Haerang", system-ui;
+  font-size: 1.25em;
 }
 
 .underline {
@@ -70,8 +76,9 @@ h1 {
 
 .word-in-progress {
   letter-spacing: 15px;
-  color: #28bdbd;
+  color: #000000;
   font-size: 30px;
+  font-weight: 700;
 }
 
 .guessed-letters {
@@ -82,10 +89,21 @@ h1 {
 .guessed-letters li {
   display: inline-block;
   padding: 0 0.5em;
+  font-weight: 600;
 }
 
 .message {
+  padding-top: 1em;
   text-align: center;
+  font-weight: 600;
+}
+
+.remaining {
+  font-weight: 500;
+}
+
+.bold {
+  font-weight: 700;
 }
 
 .guess-form {
@@ -96,24 +114,26 @@ h1 {
 
 .guess-form label {
   width: 100%;
-  font-weight: normal;
-  font-size: 14px;
+  font-weight: bold;
+  font-size: 16px;
   text-align: center;
 }
 
 input {
   width: 2.25em;
   text-align: center;
+  font-family: "Kirang Haerang", system-ui;
   font-size: 1.5em;
+  font-weight: 600;
   margin-top: 0.5em;
   padding: 0.5em;
-  border: 3px solid #28bdbd;
+  border: 5px solid #d1f768;
 }
 
 input:active,
 input:focus {
   outline: 0;
-  border: 4px solid #28bdbd;
+  border: 4px solid #d1f768;
 }
 
 .guess,
@@ -121,9 +141,11 @@ input:focus {
   padding: 1em 3em;
   border-radius: 50px;
   margin-top: 1em;
-  color: #fff;
-  background: #ff8d5c;
-  font-size: 1em;
+  color: #0d1b4f;
+  background: #dbfa85;
+  font-family: "Kirang Haerang", system-ui;
+  font-size: 1.5em;
+  font-weight: 500;
   align-self: center;
   outline: none;
   border: 0;
@@ -142,10 +164,10 @@ input:focus {
   color: white;
 }
 
-/* animatied background */
+/* animated background */
 .win {
   padding: 0 1em;
-  background: linear-gradient(-45deg, #ff9d64, #f5620c);
+  background: linear-gradient(-45deg, #f79bd3, #e21493);
   background-size: 400% 400%;
   animation: gradient 2s ease infinite;
 }
