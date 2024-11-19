@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+body, html {
+  height: 100%;
+}
+
 body {
   display: flex;
   align-items: center;
@@ -12,9 +16,10 @@ body {
   font-size: 20px;
   line-height: 150%;
   background-color: #dff6f6;
-  background-image: url("../img/bg.png");
-  background-size: 800px;
-  background-repeat: repeat;
+  background-image: url("../img/pawel-czerwinski-ruJm3dBXCqw-unsplash.jpg");
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
   color: #305050;
 }
 
@@ -25,7 +30,7 @@ body {
 
 h1 {
   width: 100%;
-  padding-top: 1em;
+  /*padding-top: 1em;*/
   
   margin: 0;
   font-family: "Pacifico", cursive;
