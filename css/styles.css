@@ -19,8 +19,10 @@ body {
   line-height: 150%;
   background-color: #fa9bc6;
   background-image: url("../img/pawel-czerwinski-ruJm3dBXCqw-unsplash.jpg");
-  background-position: center;
-  background-size: 100% 100%;
+  /*background-position: center;*/
+  background-size: cover;
+  overflow: scroll;
+  resize: both;
   background-repeat: no-repeat;
   color: #0d1b4f;
 }
@@ -32,7 +34,7 @@ body {
 
 h1 {
   width: 80%;
-  padding-top: 1em;
+  /*padding-top: 1em;*/
   
   margin: 0;
   font-family: "Cherry Bomb One", "Pacifico", system-ui;
