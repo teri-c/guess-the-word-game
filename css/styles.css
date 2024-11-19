@@ -18,19 +18,22 @@ body {
   color: #305050;
 }
 
-.logo {
+/*.logo {
   width: 70%;
   max-width: 484px;
-}
+}*/
 
 h1 {
   width: 100%;
   padding-top: 1em;
+  
   margin: 0;
-  font-family: "Unlock", sans-serif;
+  font-family: "Pacifico", cursive;
   font-style: normal;
   font-weight: normal;
-  font-size: 44px;
+  color: #ffffff;
+  font-size: 80px;
+  line-height: 100%;
   text-align: center;
 }
 
