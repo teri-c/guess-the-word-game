@@ -17,20 +17,13 @@ body {
   font-style: normal;
   font-size: 20px;
   line-height: 150%;
-  background-color: #fa9bc6;
-  background-image: url("../img/pawel-czerwinski-ruJm3dBXCqw-unsplash.jpg");
-  /*background-position: center;*/
+  background: url("../img/pawel-czerwinski-ruJm3dBXCqw-unsplash.jpg") repeat #fa9bc6;
+  background-position: center;
   background-size: cover;
   overflow: scroll;
   resize: both;
-  background-repeat: no-repeat;
   color: #0d1b4f;
 }
-
-/*.logo {
-  width: 70%;
-  max-width: 484px;
-}*/
 
 h1 {
   width: 80%;
@@ -47,9 +40,6 @@ h1 {
 }
 
 .container {
-  background: radial-gradient(50% 50% at 50% 50%,
-    rgba(167, 237, 237, 0.3) 0%,
-    rgba(156, 226, 226, 0) 100%);
   display: flex;
   justify-content: center;
   flex-direction: column;
